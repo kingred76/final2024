@@ -26,11 +26,26 @@ namespace finalProjet
         public MainWindow()
         {
             this.InitializeComponent();
+
+
+            // Vérifier que MainFrame n'est pas null
+            if (Frame != null)
+            {
+                Frame.Navigate(typeof(Page1)); 
+            }
+            else
+            {
+                // Afficher un message pour diagnostiquer le problème
+                ContentDialog errorDialog = new ContentDialog
+                {
+                    Title = "Erreur",
+                    Content = "MainFrame est null. Vérifiez votre fichier XAML.",
+                    CloseButtonText = "OK"
+                };
+                _ = errorDialog.ShowAsync();
+            }
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
-        {
-            myButton.Content = "Clicked";
-        }
+
     }
 }

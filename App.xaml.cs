@@ -26,6 +26,7 @@ namespace finalProjet
     /// </summary>
     public partial class App : Application
     {
+        public static string CurrentUserRole { get; set; } = null;
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -41,7 +42,11 @@ namespace finalProjet
         /// <param name="args">Details about the launch request and process.</param>
         protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
         {
+            var rootFrame = new Frame();
+
+            rootFrame.Navigate(typeof(Page1));
             m_window = new MainWindow();
+            m_window.Content = rootFrame; 
             m_window.Activate();
         }
 

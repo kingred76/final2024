@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="finalProjet.Page2"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:finalProjet"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <!-- Menu avec NavigationView -->
+        <NavigationView 
+            PaneDisplayMode="Left" 
+            IsBackButtonVisible="Collapsed"
+            IsSettingsVisible="False" 
+            SelectionChanged="NavigationView_SelectionChanged" 
+            Name="menu"
+            Loaded="NavigationView_Loaded"
+            Background="#FFC0C0C0"
+            >
+
+            <!-- Liste des boutons -->
+            <NavigationView.MenuItems>
+                <!-- Activités -->
+                <NavigationViewItem Content="Activités" Icon="Home" Tag="Page3" />
+
+                <!-- Profil -->
+                <NavigationViewItem Content="Profil" Icon="Contact" Tag="Page4" />
+
+                <!-- Admin -->
+                <NavigationViewItem Content="Admin" Icon="Setting" Tag="Page5" Name="adminbut" />
+
+              
+            </NavigationView.MenuItems>
+            <NavigationView.PaneFooter>
+               
+                <!-- Contenu non-cliquable affiché comme une étiquette -->
+                <Grid VerticalAlignment="Bottom" >
+                   
+
+                    <TextBlock Name="name" Margin="10 0 0 0" ></TextBlock>
+                    
+                    <Button Content="Déconnexion" Click="deconnexion" Margin="10 50 0 0" ></Button>
+                </Grid>
+                
+              
+                
+            </NavigationView.PaneFooter>
+            <!-- Contenu principal -->
+            <Frame x:Name="ContentFrame" />
+        </NavigationView>
+    </Grid>
+</Page>

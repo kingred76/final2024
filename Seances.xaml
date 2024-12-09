@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="finalProjet.Seances"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:finalProjet"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <!-- Configuration de la structure principale -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- En-tête -->
+            <RowDefinition Height="*"/>
+            <!-- Liste centrale -->
+        </Grid.RowDefinitions>
+
+        <!-- En-tête de la page -->
+        <Grid Background="#FF3B82F6" Grid.Row="0" Height="100">
+            <TextBlock Text="Liste des Séances" 
+                       Foreground="White"
+                       FontSize="28" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"/>
+        </Grid>
+
+        <!-- Liste centrale -->
+        <Grid Grid.Row="1" Margin="10">
+            <ListView x:Name="SeanceListView"
+                      Background="White"
+                      BorderThickness="1"
+                      BorderBrush="#FFC0C0C0"
+                      CornerRadius="8"
+                      ItemsSource="{x:Bind SeancesCollection}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="local:SeancesItem">
+                        <Border BorderThickness="1" 
+                                BorderBrush="#FFB0B0B0"
+                                CornerRadius="8"
+                                Padding="12"
+                                Margin="5"
+                                Background="#F0F8FF">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Date (Année, Mois, Jour) -->
+                                <TextBlock Text="{Binding DateString }" 
+                                           FontSize="18" 
+                                           FontWeight="Bold"
+                                           VerticalAlignment="Center" 
+                                           Grid.Column="0"/>
+
+                                <!-- Heure -->
+                                <TextBlock Text="{Binding Heure}" 
+                                           FontSize="16"
+                                           Foreground="#555"
+                                           VerticalAlignment="Center" 
+                                           Grid.Column="1"/>
+
+                                <!-- Places disponibles -->
+                                <TextBlock Text="{Binding Place}" 
+                                           FontSize="16"
+                                           Foreground="#555"
+                                           VerticalAlignment="Center" 
+                                           Grid.Column="2" Grid.ColumnSpan="2"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </Grid>
+</Page>
