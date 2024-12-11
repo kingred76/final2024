@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="finalProjet.Statistiques"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:finalProjet"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <!-- Utilisation du ScrollViewer pour permettre le défilement -->
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Padding="20">
+            <!-- En-tête -->
+            <Grid Background="#FF3B82F6" Height="80" VerticalAlignment="Top" Margin="0,0,0,20">
+                <TextBlock Text="Statistiques Générales"
+                           Foreground="White"
+                           FontSize="24"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           FontWeight="Bold"/>
+            </Grid>
+
+            <!-- Section de Statistiques -->
+            <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Spacing="20" VerticalAlignment="Top" Margin="0,120,0,0">
+                <!-- Total Users Box -->
+                <Border Background="#FF4CAF50" BorderBrush="#388E3C" BorderThickness="2" Padding="20" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Total Utilisateurs" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <TextBlock x:Name="TotalUser" Foreground="White" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Total Activités Box -->
+                <Border Background="#FF673AB7" BorderBrush="#512DA8" BorderThickness="2" Padding="20" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Total Activités" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <TextBlock x:Name="TotalActiviter" Foreground="White" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Moyenne d'age des usagers Box -->
+                <Border Background="#FFCDDC39" BorderBrush="#8BC34A" BorderThickness="2" Padding="20" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Moyenne d'age des usagers" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <TextBlock x:Name="MoyenneAge" Foreground="White" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Total de place disponible Box -->
+                <Border Background="#FF00BCD4" BorderBrush="#0097A7" BorderThickness="2" Padding="20" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Total de place disponnible" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <TextBlock x:Name="PlaceDispo" Foreground="White" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Activité la plus chère Box -->
+                <Border Background="#FFEF5350" BorderBrush="#D32F2F" BorderThickness="2" Padding="20" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Activité la plus chère" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <TextBlock x:Name="Money" Foreground="White" FontSize="24" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+                <!-- Liste des participants par activité -->
+                <Border Background="#FF8BC34A" BorderBrush="#7B1FA2" BorderThickness="2" Padding="20" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Participants par Activité" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <ListBox x:Name="ParticipantsList" FontSize="16" Height="200">
+                            <!-- Les items seront ajoutés dynamiquement -->
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+
+                <!-- Liste des moyennes de notes par activité -->
+                <Border Background="#FFFFEB3B" BorderBrush="#FBC02D" BorderThickness="2" Padding="20" CornerRadius="10">
+                    <StackPanel>
+                        <TextBlock Text="Moyenne des Notes par Activité" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                        <ListBox x:Name="NotesList" FontSize="16" Height="200">
+                            <!-- Les items seront ajoutés dynamiquement -->
+                        </ListBox>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>

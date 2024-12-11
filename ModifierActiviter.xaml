@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <!-- En-tête -->
+      
         <Grid Background="#FF3B82F6" Height="100" VerticalAlignment="Top">
             <TextBlock Text="Modifier Activité" 
                        Foreground="White"
@@ -19,35 +19,43 @@
                        FontWeight="Bold"/>
         </Grid>
 
-        <!-- Formulaire -->
+      
         <StackPanel Margin="20,120,20,20" HorizontalAlignment="Center">
-            <!-- Champ Nom -->
+           
             <TextBlock Text="Nom de l'Activité" Margin="0,10,0,5" FontSize="16"/>
             <TextBlock x:Name="NomTextBox"  Width="300"/>
 
-            <!-- Champ Type -->
+          
             <TextBlock Text="Type de l'Activité" Margin="0,10,0,5" FontSize="16"/>
             <TextBox x:Name="TypeTextBox" PlaceholderText="Entrez le type de l'activité" Width="300"/>
 
-            <!-- Champ Prix Organisation -->
-            <TextBlock Text="Prix Organisation (€)" Margin="0,10,0,5" FontSize="16"/>
+            
+            <TextBlock Text="Prix Organisation ($)" Margin="0,10,0,5" FontSize="16"/>
             <TextBox x:Name="PrixOrganisationTextBox" PlaceholderText="Entrez le prix pour l'organisation" Width="300" InputScope="Number"/>
 
-            <!-- Champ Prix Clients -->
-            <TextBlock Text="Prix Clients (€)" Margin="0,10,0,5" FontSize="16"/>
+            
+            <TextBlock Text="Prix Clients ($)" Margin="0,10,0,5" FontSize="16"/>
             <TextBox x:Name="PrixClientsTextBox" PlaceholderText="Entrez le prix pour les clients" Width="300" InputScope="Number"/>
 
-            <!-- Bouton Ajouter -->
-            <Button Content="Modifier"
-                    Width="150"
-                    Height="40"
-                    Background="#FF3B82F6"
-                    Foreground="White"
-                    FontSize="16"
-                    FontWeight="Bold"
-                   Click="Button_Click"
-                    Margin="0,20,0,0"
-                    />
+            <!-- Boutons -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0" Spacing="10">
+                <Button Content="Modifier"
+                        Width="150"
+                        Height="40"
+                        Background="#FF3B82F6"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Click="Button_Click"/>
+                <Button Content="Retour"
+                        Width="150"
+                        Height="40"
+                        Background="#FFFFC0C0"
+                        Foreground="White"
+                        FontSize="16"
+                        FontWeight="Bold"
+                        Click="Button_Click_1"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

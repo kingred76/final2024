@@ -28,14 +28,14 @@ namespace finalProjet
             this.InitializeComponent();
 
 
-            // Vérifier que MainFrame n'est pas null
+           
             if (Frame != null)
             {
                 Frame.Navigate(typeof(Page1)); 
             }
             else
             {
-                // Afficher un message pour diagnostiquer le problème
+             
                 ContentDialog errorDialog = new ContentDialog
                 {
                     Title = "Erreur",

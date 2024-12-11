@@ -10,15 +10,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <!-- Configuration de la structure principale -->
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
-            <!-- En-tête -->
+            
             <RowDefinition Height="*"/>
-            <!-- Liste centrale -->
+            
         </Grid.RowDefinitions>
 
-        <!-- En-tête de la page -->
+       
         <Grid Background="#FF3B82F6" Grid.Row="0" Height="100">
             <TextBlock Text="Liste des Séances" 
                        Foreground="White"
@@ -28,7 +28,7 @@
                        FontWeight="Bold"/>
         </Grid>
 
-        <!-- Liste centrale -->
+        
         <Grid Grid.Row="1" Margin="10">
             <ListView x:Name="SeanceListView"
                       Background="White"
@@ -52,28 +52,28 @@
                                     <ColumnDefinition Width="1*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <!-- Date (Année, Mois, Jour) -->
+                               
                                 <TextBlock Text="{Binding DateString}" 
                                            FontSize="18" 
                                            FontWeight="Bold"
                                            VerticalAlignment="Center" 
                                            Grid.Column="0"/>
 
-                                <!-- Heure -->
+                               
                                 <TextBlock Text="{Binding HeureString}" 
                                            FontSize="16"
                                            Foreground="#555"
                                            VerticalAlignment="Center" 
                                            Grid.Column="1"/>
 
-                                <!-- Places disponibles -->
+                               
                                 <TextBlock Text="{Binding Place}" 
                                            FontSize="16"
                                            Foreground="#555"
                                            VerticalAlignment="Center" 
                                            Grid.Column="2"/>
 
-                                <!-- Bouton d'inscription -->
+                                
                                 <Button Content="S'inscrire" 
                                         HorizontalAlignment="Center" 
                                         VerticalAlignment="Center" 

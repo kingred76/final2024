@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.System;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -34,6 +35,11 @@ namespace finalProjet
             {
 
                 var activiter = ConnextionDb.GetInstance().GetActiviter(e.Parameter.ToString());
+                if (activiter == null)
+                {
+                    Frame.Navigate(typeof(GestionActiviter));
+                    return;
+                }
                 NomTextBox.Text = activiter.Nom;
                 TypeTextBox.Text = activiter.Type;
                 PrixOrganisationTextBox.Text = activiter.CoutUnitaire.ToString();
@@ -52,6 +58,11 @@ namespace finalProjet
 
             ConnextionDb.GetInstance().ModifierActiviter(new Activiter { Nom = nom, Type = type, CoutUnitaire = prixOrganisation, CoutClient = prixClient });
 
+            Frame.Navigate(typeof(GestionActiviter));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
             Frame.Navigate(typeof(GestionActiviter));
         }
     }

@@ -2,6 +2,9 @@ using finalProjet;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Navigation;
+using MySqlX.XDevAPI;
+using System.Collections.Generic;
+using System;
 
 namespace finalProjet
 {
@@ -74,12 +77,56 @@ namespace finalProjet
 
         private void ConfigureMenue()
         {
-            adminbut.Visibility = App.CurrentUserRole == "admin" ? Visibility.Visible : Visibility.Collapsed; 
-            
+            adminbut.Visibility = App.CurrentUserRole == "admin" ? Visibility.Visible : Visibility.Collapsed;
+            exClient.Visibility = App.CurrentUserRole == "admin" ? Visibility.Visible : Visibility.Collapsed;
+            exActiviter.Visibility = App.CurrentUserRole == "admin" ? Visibility.Visible : Visibility.Collapsed;
+
+
         }
         
         private void NavigateToPage3(object sender, RoutedEventArgs e) => ContentFrame.Navigate(typeof(Page3));
         private void NavigateToPage4(object sender, RoutedEventArgs e) => ContentFrame.Navigate(typeof(Page4));
         private void NavigateToPage5(object sender, RoutedEventArgs e) => ContentFrame.Navigate(typeof(Page5));
+
+        private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileSavePicker();
+
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.m_window);
+            WinRT.Interop.InitializeWithWindow.Initialize(picker, hWnd);
+
+            picker.SuggestedFileName = "Utilisateur";
+            picker.FileTypeChoices.Add("Fichier texte", new List<string>() { ".csv" });
+
+            //crée le fichier
+            Windows.Storage.StorageFile monFichier = await picker.PickSaveFileAsync();
+
+            List<Utilisateur> liste = ConnextionDb.GetInstance().GetAllUser();
+           
+
+
+            await Windows.Storage.FileIO.WriteLinesAsync(monFichier, liste.ConvertAll(x => x.ToString()), Windows.Storage.Streams.UnicodeEncoding.Utf8);
+        }
+
+        private async void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var picker = new Windows.Storage.Pickers.FileSavePicker();
+
+            var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.m_window);
+            WinRT.Interop.InitializeWithWindow.Initialize(picker, hWnd);
+
+            picker.SuggestedFileName = "Activiter";
+            picker.FileTypeChoices.Add("Fichier texte", new List<string>() { ".csv" });
+
+            //crée le fichier
+            Windows.Storage.StorageFile monFichier = await picker.PickSaveFileAsync();
+
+            List<Activiter> liste = ConnextionDb.GetInstance().GetAllActiviter();
+
+
+           
+
+            await Windows.Storage.FileIO.WriteLinesAsync(monFichier, liste.ConvertAll(x => x.ToString()), Windows.Storage.Streams.UnicodeEncoding.Utf8);
+        }
     }
 }

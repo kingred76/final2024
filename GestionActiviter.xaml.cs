@@ -45,7 +45,7 @@ namespace finalProjet
 
 
 
-            // Liaison des données
+           
             this.DataContext = this;
 
             base.OnNavigatedTo(e);
@@ -106,6 +106,11 @@ namespace finalProjet
 
                 }
             }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Page5));
         }
     }
 }

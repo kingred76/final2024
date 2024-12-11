@@ -52,7 +52,7 @@ namespace finalProjet
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Récupérer l'objet lié au bouton cliqué
+            
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {

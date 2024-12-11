@@ -16,5 +16,10 @@ namespace finalProjet
         public DateTime DateNaissance { get; set; }
         public string DateString { get { return "Date : " + DateNaissance.ToString("MM/dd/yyyy"); } }
         public int Age { get; set; }
+
+        public override string ToString()
+        {
+            return Id + ";" + Nom + ";" + Adresse + ";" + DateString + ";" + Age;
+        }
     }
 }

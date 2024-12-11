@@ -34,6 +34,10 @@ namespace finalProjet
             {
                
                 var user = ConnextionDb.GetInstance().GetUser(e.Parameter.ToString());
+                if (user == null) { 
+                    Frame.Navigate(typeof(GestionUtilisateur));
+                    return;
+                }
                 id = user.Id;
                 NomTextBox.Text = user.Nom;
                 PrenomTextBox.Text = user.Prenom;
@@ -52,6 +56,11 @@ namespace finalProjet
 
             ConnextionDb.GetInstance().ModifierUser(new Utilisateur { Nom = nom, Prenom = prenom, Adresse = adresse, DateNaissance = date, Id = id });
 
+            Frame.Navigate(typeof(GestionUtilisateur));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
             Frame.Navigate(typeof(GestionUtilisateur));
         }
     }

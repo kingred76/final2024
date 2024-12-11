@@ -13,5 +13,9 @@ namespace finalProjet
         public float CoutUnitaire { get; set; }
         public float CoutClient { get; set; }
 
+        public override string ToString()
+        {
+            return Nom + ";" + Type + ";" + CoutUnitaire + ";" + CoutClient;
+        }
     }
 }

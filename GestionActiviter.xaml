@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="finalProjet.GestionActiviter"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -83,18 +82,30 @@
             </ListView>
         </Grid>
 
-        <!-- Bouton Ajouter en bas de la page -->
-        <Button Content="Ajouter"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Bottom"
-                Margin="0,0,0,10"
-                Width="200"
-                Height="40"
-                Background="#FF3B82F6"
-                Foreground="White"
-                FontSize="16"
-                FontWeight="Bold"
-                Click="Button_Click_1"
-                />
+        <!-- Zone contenant les boutons Ajouter et Retour -->
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,10">
+            <!-- Bouton Ajouter -->
+            <Button Content="Ajouter"
+                    Width="200"
+                    Height="40"
+                    Background="#FF3B82F6"
+                    Foreground="White"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Click="Button_Click_1"
+                    Margin="0,0,10,0" />
+            <!-- Bouton Retour -->
+            <Button Content="Retour"
+                    Width="200"
+                    Height="40"
+                    Background="#FF3B82F6"
+                    Foreground="White"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Click="Button_Click_3" />
+        </StackPanel>
     </Grid>
 </Page>

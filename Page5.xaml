@@ -10,10 +10,10 @@
 
     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
 
-        <!-- StackPanel pour empiler les boutons les uns sur les autres -->
+      
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
 
-            <!-- Titre -->
+           
             <TextBlock Text="Page d'Administration"
                        FontSize="26" 
                        FontWeight="Bold" 
@@ -21,7 +21,7 @@
                        Margin="0,0,0,30"
                        HorizontalAlignment="Center" />
 
-            <!-- Boutons avec des styles pour les rendre plus esthétiques -->
+           
             <Button Content="Gestion des Utilisateurs" Width="250" Height="50" 
                     Margin="0,5"
                     Background="#4CAF50" 
@@ -43,7 +43,8 @@
                     BorderThickness="2" 
                     CornerRadius="8"
                     HorizontalAlignment="Center" 
-                    VerticalAlignment="Center"/>
+                    VerticalAlignment="Center"
+                    Click="Button_Click_2"/>
 
             <Button Content="Gestion des Activiters" Width="250" Height="50" 
                     Margin="0,5"
@@ -66,7 +67,8 @@
                     BorderThickness="2" 
                     CornerRadius="8"
                     HorizontalAlignment="Center" 
-                    VerticalAlignment="Center"/>
+                    VerticalAlignment="Center"
+                    Click="Button_Click_3"/>
 
         </StackPanel>
 

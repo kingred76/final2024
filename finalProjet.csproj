@@ -15,15 +15,19 @@
   <ItemGroup>
     <None Remove="AjoutActiviter.xaml" />
     <None Remove="AjoutClients.xaml" />
+    <None Remove="AjoutSeance.xaml" />
     <None Remove="GestionActiviter.xaml" />
+    <None Remove="GestionSeance.xaml" />
     <None Remove="GestionUtilisateur.xaml" />
     <None Remove="ModifierActiviter.xaml" />
+    <None Remove="ModifierSeance.xaml" />
     <None Remove="ModifierUser.xaml" />
     <None Remove="Page1.xaml" />
     <None Remove="Page2.xaml" />
     <None Remove="Page3.xaml" />
     <None Remove="Page4.xaml" />
     <None Remove="Seances.xaml" />
+    <None Remove="Statistiques.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +56,26 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Statistiques.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ModifierSeance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AjoutSeance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="GestionSeance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="ModifierActiviter.xaml">

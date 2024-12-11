@@ -37,7 +37,7 @@ namespace finalProjet
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            // Récupérer l'objet lié au bouton cliqué
+            
             Button clickedButton = sender as Button;
             if (clickedButton != null)
             {
@@ -82,6 +82,11 @@ namespace finalProjet
                 }
             }
             
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Page5));
         }
     }
 }

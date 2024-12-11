@@ -37,5 +37,15 @@ namespace finalProjet
         {
             Frame.Navigate(typeof(GestionActiviter));
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(GestionSeance));
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Statistiques));
+        }
     }
 }

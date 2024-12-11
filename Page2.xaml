@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="finalProjet.Page2"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid>
-        <!-- Menu avec NavigationView -->
+        
         <NavigationView 
             PaneDisplayMode="Left" 
             IsBackButtonVisible="Collapsed"
@@ -20,34 +19,30 @@
             Background="#FFC0C0C0"
             >
 
-            <!-- Liste des boutons -->
+            
             <NavigationView.MenuItems>
-                <!-- Activités -->
+                
                 <NavigationViewItem Content="Activités" Icon="Home" Tag="Page3" />
 
-                <!-- Profil -->
-                <NavigationViewItem Content="Profil" Icon="Contact" Tag="Page4" />
-
-                <!-- Admin -->
+                
                 <NavigationViewItem Content="Admin" Icon="Setting" Tag="Page5" Name="adminbut" />
-
-              
             </NavigationView.MenuItems>
+
             <NavigationView.PaneFooter>
                
-                <!-- Contenu non-cliquable affiché comme une étiquette -->
                 <Grid VerticalAlignment="Bottom" >
-                   
+                    <TextBlock Name="name" Margin="10,10,0,0" VerticalAlignment="Top"></TextBlock>
 
-                    <TextBlock Name="name" Margin="10 0 0 0" ></TextBlock>
-                    
-                    <Button Content="Déconnexion" Click="deconnexion" Margin="10 50 0 0" ></Button>
+                  
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="10,80,0,10">
+                        <Button Name="exClient" Content="Exporter Clients" Click="Button_Click" Margin="10,10, 0, 0" FontSize="14" Height="35"/>
+                        <Button  Name="exActiviter"  Content="Exporter Activités" Click="Button_Click_1" Margin="10,10, 0, 0" FontSize="14" Height="35"/>
+                        <Button Content="Déconnexion" Click="deconnexion" Margin="10,10,0,0" FontSize="14" Height="35"/>
+                    </StackPanel>
                 </Grid>
-                
-              
-                
             </NavigationView.PaneFooter>
-            <!-- Contenu principal -->
+
+            
             <Frame x:Name="ContentFrame" />
         </NavigationView>
     </Grid>

@@ -17,7 +17,7 @@ namespace finalProjet
             using (Aes aes = Aes.Create())
             {
                 aes.Key = Encoding.UTF8.GetBytes(Key);
-                aes.IV = new byte[16]; // Default IV (all zero)
+                aes.IV = new byte[16]; 
 
                 using (ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV))
                 {

@@ -1,5 +1,5 @@
 <Page
-    x:Class="finalProjet.AjoutActiviter"
+    x:Class="finalProjet.AjoutSeance"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:finalProjet"
@@ -9,35 +9,39 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        
+       
         <Grid Background="#FF3B82F6" Height="100" VerticalAlignment="Top">
-            <TextBlock Text="Ajouter une Activité" 
-                       Foreground="White"
-                       FontSize="28" 
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"
-                       FontWeight="Bold"/>
+            <TextBlock Text="Ajouter une Séance" 
+                   Foreground="White"
+                   FontSize="28" 
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontWeight="Bold"/>
         </Grid>
 
         
         <StackPanel Margin="20,120,20,20" HorizontalAlignment="Center">
-         
-            <TextBlock Text="Nom de l'Activité" Margin="0,10,0,5" FontSize="16"/>
-            <TextBox x:Name="NomTextBox" PlaceholderText="Entrez le nom de l'activité" Width="300"/>
+            
+            <TextBlock Text="Nom de la Séance" Margin="0,10,0,5" FontSize="16"/>
+            <ComboBox x:Name="NomComboBox" Width="300" SelectionChanged="NomComboBox_SelectionChanged"/>
+
+
+            <TextBlock Text="Date" Margin="0,10,0,5" FontSize="16"/>
+            <DatePicker x:Name="DatePicker" Width="300"/>
+
+            
+            <TextBlock Text="Heure " Margin="0,10,0,5" FontSize="16"/>
+            <TextBox x:Name="HeureTextBox" PlaceholderText="Entrez l'heure (HH:mm)" Width="300"/>
 
            
-            <TextBlock Text="Type de l'Activité" Margin="0,10,0,5" FontSize="16"/>
-            <TextBox x:Name="TypeTextBox" PlaceholderText="Entrez le type de l'activité" Width="300"/>
+            <TextBlock Text="Place Disponible" Margin="0,10,0,5" FontSize="16"/>
+            <TextBox x:Name="PlaceDispoTextBox" PlaceholderText="places disponibles" Width="300" InputScope="Number"/>
 
             
-            <TextBlock Text="Prix Organisation ($)" Margin="0,10,0,5" FontSize="16"/>
-            <TextBox x:Name="PrixOrganisationTextBox" PlaceholderText="Entrez le prix pour l'organisation" Width="300" InputScope="Number"/>
+            <TextBlock Text="Place Maximum" Margin="0,10,0,5" FontSize="16"/>
+            <TextBox x:Name="PlaceMaxTextBox" PlaceholderText="places maximum" Width="300" InputScope="Number"/>
 
-            
-            <TextBlock Text="Prix Clients ($)" Margin="0,10,0,5" FontSize="16"/>
-            <TextBox x:Name="PrixClientsTextBox" PlaceholderText="Entrez le prix pour les clients" Width="300" InputScope="Number"/>
-
-            
+           
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0" Spacing="10">
                 <Button Content="Ajouter"
                         Width="150"
@@ -46,7 +50,8 @@
                         Foreground="White"
                         FontSize="16"
                         FontWeight="Bold"
-                        Click="Button_Click"/>
+                        Click="Button_Click"
+                      />
                 <Button Content="Retour"
                         Width="150"
                         Height="40"
@@ -54,7 +59,8 @@
                         Foreground="White"
                         FontSize="16"
                         FontWeight="Bold"
-                        Click="Button_Click_1"/>
+                        Click="Button_Click_1"
+                        />
             </StackPanel>
         </StackPanel>
     </Grid>
