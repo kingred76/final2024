@@ -26,6 +26,7 @@ namespace finalProjet
     /// </summary>
     public sealed partial class Seances : Page
     {
+        
         public ObservableCollection<SeancesItem> SeancesCollection { get; set; } = new ObservableCollection<SeancesItem>();
         public Seances()
         {
@@ -36,14 +37,46 @@ namespace finalProjet
         {
             if (e.Parameter is string)
             {
+               var Isreserve = ConnextionDb.GetInstance().UserActiviter(Page2.userid, e.Parameter.ToString());
                var date = ConnextionDb.GetInstance().GetAllSeance(e.Parameter.ToString());
-                foreach (var item in date) { 
+
+                foreach (var item in date) {
+                item.IsButtonVisible = Isreserve || App.CurrentUserRole=="admin" ? Visibility.Collapsed : Visibility.Visible;
                 SeancesCollection.Add(item);
                 }
             }
             base.OnNavigatedTo(e);
            
             
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            // Récupérer l'objet lié au bouton cliqué
+            Button clickedButton = sender as Button;
+            if (clickedButton != null)
+            {
+               
+                SeancesItem selectedSeance = clickedButton.DataContext as SeancesItem;
+
+                if (selectedSeance != null)
+                {
+                   
+                    var connexionDB = ConnextionDb.GetInstance();
+                    var id = selectedSeance.Id;
+                    var userID = Page2.userid;
+                    connexionDB.RegisterToSeance(userID, id);
+                  
+
+               
+                }
+            }
+            Frame.Navigate(typeof(Page3));
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Page3));
         }
     }
 

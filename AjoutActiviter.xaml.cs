@@ -21,20 +21,22 @@ namespace finalProjet
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Page5 : Page
+    public sealed partial class AjoutActiviter : Page
     {
-        public Page5()
+        public AjoutActiviter()
         {
             this.InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(GestionUtilisateur));
-        }
+            var nom = NomTextBox.Text;
+            var Type = TypeTextBox.Text;
+            var CoutUnitaire = int.Parse(PrixOrganisationTextBox.Text);
+            var CoutClients = int.Parse(PrixClientsTextBox.Text);
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
+            ConnextionDb.GetInstance().AjoutActiviter(new Activiter { Nom = nom, Type = Type, CoutUnitaire = CoutUnitaire, CoutClient = CoutClients });
+
             Frame.Navigate(typeof(GestionActiviter));
         }
     }

@@ -21,21 +21,23 @@ namespace finalProjet
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Page5 : Page
+    public sealed partial class AjoutClients : Page
     {
-        public Page5()
+        public AjoutClients()
         {
             this.InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(GestionUtilisateur));
-        }
+            var nom = NomTextBox.Text;
+            var prenom = PrenomTextBox.Text;
+            var adresse = AdresseTextBox.Text;
+            DateTime date = DateNaissancePicker.Date.DateTime;
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(GestionActiviter));
+            ConnextionDb.GetInstance().AjoutUser(new Utilisateur {Nom = nom, Prenom = prenom, Adresse = adresse, DateNaissance = date});
+
+            Frame.Navigate(typeof(GestionUtilisateur));
         }
     }
 }

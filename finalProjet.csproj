@@ -13,6 +13,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="AjoutActiviter.xaml" />
+    <None Remove="AjoutClients.xaml" />
+    <None Remove="GestionActiviter.xaml" />
+    <None Remove="GestionUtilisateur.xaml" />
+    <None Remove="ModifierActiviter.xaml" />
+    <None Remove="ModifierUser.xaml" />
     <None Remove="Page1.xaml" />
     <None Remove="Page2.xaml" />
     <None Remove="Page3.xaml" />
@@ -46,6 +52,36 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.1742" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.241114003" />
     <PackageReference Include="MySql.Data" Version="9.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ModifierActiviter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AjoutActiviter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="GestionActiviter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="ModifierUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AjoutClients.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="GestionUtilisateur.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Seances.xaml">

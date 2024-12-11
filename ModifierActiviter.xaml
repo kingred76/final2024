@@ -1,0 +1,53 @@
+<Page
+    x:Class="finalProjet.ModifierActiviter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:finalProjet"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <!-- En-tête -->
+        <Grid Background="#FF3B82F6" Height="100" VerticalAlignment="Top">
+            <TextBlock Text="Modifier Activité" 
+                       Foreground="White"
+                       FontSize="28" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       FontWeight="Bold"/>
+        </Grid>
+
+        <!-- Formulaire -->
+        <StackPanel Margin="20,120,20,20" HorizontalAlignment="Center">
+            <!-- Champ Nom -->
+            <TextBlock Text="Nom de l'Activité" Margin="0,10,0,5" FontSize="16"/>
+            <TextBlock x:Name="NomTextBox"  Width="300"/>
+
+            <!-- Champ Type -->
+            <TextBlock Text="Type de l'Activité" Margin="0,10,0,5" FontSize="16"/>
+            <TextBox x:Name="TypeTextBox" PlaceholderText="Entrez le type de l'activité" Width="300"/>
+
+            <!-- Champ Prix Organisation -->
+            <TextBlock Text="Prix Organisation (€)" Margin="0,10,0,5" FontSize="16"/>
+            <TextBox x:Name="PrixOrganisationTextBox" PlaceholderText="Entrez le prix pour l'organisation" Width="300" InputScope="Number"/>
+
+            <!-- Champ Prix Clients -->
+            <TextBlock Text="Prix Clients (€)" Margin="0,10,0,5" FontSize="16"/>
+            <TextBox x:Name="PrixClientsTextBox" PlaceholderText="Entrez le prix pour les clients" Width="300" InputScope="Number"/>
+
+            <!-- Bouton Ajouter -->
+            <Button Content="Modifier"
+                    Width="150"
+                    Height="40"
+                    Background="#FF3B82F6"
+                    Foreground="White"
+                    FontSize="16"
+                    FontWeight="Bold"
+                   Click="Button_Click"
+                    Margin="0,20,0,0"
+                    />
+        </StackPanel>
+    </Grid>
+</Page>

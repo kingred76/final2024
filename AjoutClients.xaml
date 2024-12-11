@@ -1,0 +1,62 @@
+<Page
+    x:Class="finalProjet.AjoutClients"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:finalProjet"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="20">
+        <!-- En-tête de la page -->
+        <TextBlock Text="Ajouter un Nouvel Utilisateur"
+                   FontSize="28"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Margin="0,20,0,10"/>
+
+        <!-- Formulaire de saisie -->
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Spacing="15">
+
+          
+
+            <!-- Champ Nom -->
+            <TextBox x:Name="NomTextBox"
+                     Header="Nom"
+                     Width="300"
+                     PlaceholderText="Entrez le nom"
+                     Margin="0,10,0,10"/>
+
+            <!-- Champ Prénom -->
+            <TextBox x:Name="PrenomTextBox"
+                     Header="Prénom"
+                     Width="300"
+                     PlaceholderText="Entrez le prénom"
+                     Margin="0,10,0,10"/>
+
+            <!-- Champ Adresse -->
+            <TextBox x:Name="AdresseTextBox"
+                     Header="Adresse"
+                     Width="300"
+                     PlaceholderText="Entrez l'adresse"
+                     Margin="0,10,0,10"/>
+
+            <!-- Champ Date de naissance -->
+            <DatePicker x:Name="DateNaissancePicker"
+                        Header="Date de Naissance"
+                        Width="300"
+                        Margin="0,10,0,10"/>
+
+            
+
+            <!-- Bouton Ajouter -->
+            <Button Content="Ajouter Utilisateur"
+                    Width="300"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Click="Button_Click"
+                    Background="#FF3B82F6"
+                    Foreground="White"
+                    Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Page>

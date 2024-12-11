@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <Page
     x:Class="finalProjet.Page5"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -9,7 +8,67 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+
+        <!-- StackPanel pour empiler les boutons les uns sur les autres -->
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20">
+
+            <!-- Titre -->
+            <TextBlock Text="Page d'Administration"
+                       FontSize="26" 
+                       FontWeight="Bold" 
+                       Foreground="#3E8BFF" 
+                       Margin="0,0,0,30"
+                       HorizontalAlignment="Center" />
+
+            <!-- Boutons avec des styles pour les rendre plus esthétiques -->
+            <Button Content="Gestion des Utilisateurs" Width="250" Height="50" 
+                    Margin="0,5"
+                    Background="#4CAF50" 
+                    Foreground="White" 
+                    FontSize="16"
+                    BorderBrush="#388E3C" 
+                    BorderThickness="2" 
+                    CornerRadius="8"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Click="Button_Click"/>
+
+            <Button Content="Gestion des Séances" Width="250" Height="50" 
+                    Margin="0,5"
+                    Background="#2196F3" 
+                    Foreground="White" 
+                    FontSize="16"
+                    BorderBrush="#1976D2" 
+                    BorderThickness="2" 
+                    CornerRadius="8"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"/>
+
+            <Button Content="Gestion des Activiters" Width="250" Height="50" 
+                    Margin="0,5"
+                    Background="#FFC107" 
+                    Foreground="White" 
+                    FontSize="16"
+                    BorderBrush="#FFA000" 
+                    BorderThickness="2" 
+                    CornerRadius="8"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Click="Button_Click_1"/>
+
+            <Button Content="Statistiques" Width="250" Height="50" 
+                    Margin="0,5"
+                    Background="#FF5722" 
+                    Foreground="White" 
+                    FontSize="16"
+                    BorderBrush="#D32F2F" 
+                    BorderThickness="2" 
+                    CornerRadius="8"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"/>
+
+        </StackPanel>
 
     </Grid>
 </Page>

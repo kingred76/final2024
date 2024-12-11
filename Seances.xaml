@@ -53,14 +53,14 @@
                                 </Grid.ColumnDefinitions>
 
                                 <!-- Date (Année, Mois, Jour) -->
-                                <TextBlock Text="{Binding DateString }" 
+                                <TextBlock Text="{Binding DateString}" 
                                            FontSize="18" 
                                            FontWeight="Bold"
                                            VerticalAlignment="Center" 
                                            Grid.Column="0"/>
 
                                 <!-- Heure -->
-                                <TextBlock Text="{Binding Heure}" 
+                                <TextBlock Text="{Binding HeureString}" 
                                            FontSize="16"
                                            Foreground="#555"
                                            VerticalAlignment="Center" 
@@ -71,12 +71,24 @@
                                            FontSize="16"
                                            Foreground="#555"
                                            VerticalAlignment="Center" 
-                                           Grid.Column="2" Grid.ColumnSpan="2"/>
+                                           Grid.Column="2"/>
+
+                                <!-- Bouton d'inscription -->
+                                <Button Content="S'inscrire" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        Grid.Column="3"
+                                        Click="Button_Click"
+                                        Visibility="{Binding Path=IsButtonVisible}"/>
                             </Grid>
                         </Border>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Content="Retour"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"
+                    Click="Button_Click_1"></Button>
         </Grid>
     </Grid>
 </Page>
